@@ -1,14 +1,21 @@
 {
-  "name": "plug-client",
+  "name": "plug-meter",
   "author": "Fiete Wennier",
   "version": "1.0.0",
   "license": "MIT",
   "private": true,
   "type": "module",
   "scripts": {
-    "start": "ts-node src/main.ts",
+    "start": "ts-node --experimentalSpecifierResolution=node src/main.ts",
     "dev": "nodemon",
     "lint": "eslint --ext .ts src/**"
+  },
+  "dependencies": {
+    "aedes": "^0.47.0",
+    "dotenv": "^16.0.1",
+    "loglevel": "^1.8.0",
+    "lowdb": "^3.0.0",
+    "mqtt": "^4.3.7"
   },
   "devDependencies": {
     "@types/node": "^17.0.35",

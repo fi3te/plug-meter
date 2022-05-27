@@ -1,11 +1,20 @@
 {
     "compilerOptions": {
-        "target": "ES2015",
-        "module": "ESNext",
+        "target": "es2017",
+        "module": "esnext",
+        "moduleResolution": "node",
         "strict": true,
         "skipLibCheck": true,
         "forceConsistentCasingInFileNames": true,
-        "outDir": "dist"
+        "outDir": "dist",
+        "baseUrl": "./src",
+        "paths": {
+            "aedes": ["../node_modules/aedes/aedes"],
+            "dotenv": ["../node_modules/dotenv/lib/main"],
+            "loglevel": ["../node_modules/loglevel/index"],
+            "lowdb": ["../node_modules/lowdb/lib/index"],
+            "mqtt": ["../node_modules/mqtt/types"]
+        }
     },
     "include": [
         "src/**/*.ts"
