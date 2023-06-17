@@ -1,9 +1,12 @@
 services:
   server:
-    build: .
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile.armv7
     env_file: application.env
     ports:
       - "1883:1883"
-      - "4000:80"
+      - "4001:80"
     volumes:
       - ./data:/usr/src/app/data
