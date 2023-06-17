@@ -6,7 +6,8 @@ export function startMqttBroker(): void {
     const broker = aedes.createBroker();
     const server = createServer(broker.handle);
 
-    server.listen(1883, () => {
-        log.info('MQTT broker is listening...');
+    const port = 1883;
+    server.listen(port, () => {
+        log.info(`MQTT broker is running on port ${port}...`);
     });
 }

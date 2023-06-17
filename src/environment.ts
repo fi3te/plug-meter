@@ -6,6 +6,7 @@ export interface Env extends NodeJS.ProcessEnv {
     MQTT_USERNAME: string;
     MQTT_PASSWORD: string;
     HTTP_PORT: string;
+    DB_FILENAME: string;
 }
 
 export function loadEnv(): Env {

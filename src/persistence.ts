@@ -1,5 +1,8 @@
-import { Low } from 'lowdb';
-import { JSONFile } from 'lowdb/node';
+import { LowSync } from 'lowdb';
+import { JSONFileSync } from 'lowdb/node';
+import log from "loglevel";
+import path from "path";
+import fs from "fs";
 
 type Data = {
     online: boolean;
@@ -7,39 +10,56 @@ type Data = {
     totalEnergy: number;
 }
 
-const adapter = new JSONFile<Data>('db.json');
-const db = new Low(adapter, {
-    online: false,
-    currentEnergy: 0,
-    totalEnergy: 0
-});
+let db: LowSync<Data> | undefined;
 
-await db.read();
+export function initDatabase(filename: string): void {
+    const dirname = path.dirname(filename);
+    fs.mkdirSync(dirname, { recursive: true });
 
-export async function updateEnergy(energy: number) {
-    if (db.data) {
-        const data = db.data;
+    const adapter = new JSONFileSync<Data>(filename);
+    db = new LowSync(adapter, {
+        online: false,
+        currentEnergy: 0,
+        totalEnergy: 0
+    });
 
-        const previousEnergy = data.currentEnergy;
-        data.currentEnergy = energy;
-
-        if (energy >= previousEnergy) {
-            data.totalEnergy += energy - previousEnergy;
-        } else {
-            data.totalEnergy += energy;
-        }
-
-        await db.write();
-    }
+    db.read();
+    log.info(`Initialized database (${filename}).`);
 }
 
-export async function updateOnline(online: boolean) {
-    if (db.data) {
-        db.data.online = online;
-        await db.write();
+export function updateEnergy(energy: number): void {
+    if (!db?.data) {
+        throw initError();
     }
+    const data = db.data;
+
+    const previousEnergy = data.currentEnergy;
+    data.currentEnergy = energy;
+
+    if (energy >= previousEnergy) {
+        data.totalEnergy += energy - previousEnergy;
+    } else {
+        data.totalEnergy += energy;
+    }
+
+    db.write();
 }
 
-export function getData(): Data | null {
+export function updateOnline(online: boolean): void {
+    if (!db?.data) {
+        throw initError();
+    }
+    db.data.online = online;
+    db.write();
+}
+
+export function getData(): Data {
+    if (!db?.data) {
+        throw initError();
+    }
     return db.data;
+}
+
+function initError(): ReferenceError {
+    return new ReferenceError('Database has not been initialized yet.');
 }

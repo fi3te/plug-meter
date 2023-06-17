@@ -1,7 +1,9 @@
 services:
-  plug-meter:
+  server:
     build: .
     env_file: application.env
     ports:
       - "1883:1883"
       - "4000:80"
+    volumes:
+      - ./data:/usr/src/app/data

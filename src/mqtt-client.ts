@@ -14,7 +14,7 @@ export function startMqttClient(plugIdentifier: string,
     };
 
     client.on('connect', () => {
-        log.info('Connected to MQTT broker.');
+        log.info('Established connection to MQTT broker.');
         client.subscribe(onlineTopic, handleError);
         client.subscribe(energyTopic, handleError);
     });
