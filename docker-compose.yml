@@ -1,0 +1,7 @@
+services:
+  plug-meter:
+    build: .
+    env_file: application.env
+    ports:
+      - "1883:1883"
+      - "4000:80"

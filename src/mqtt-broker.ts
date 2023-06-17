@@ -1,9 +1,10 @@
 import aedes from 'aedes';
-import * as net from 'net';
+import { createServer } from 'net';
 import log from 'loglevel';
 
 export function startMqttBroker(): void {
-    const server = net.createServer(aedes().handle);
+    const broker = aedes.createBroker();
+    const server = createServer(broker.handle);
 
     server.listen(1883, () => {
         log.info('MQTT broker is listening...');

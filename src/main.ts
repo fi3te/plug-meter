@@ -1,8 +1,8 @@
-import { loadEnv } from './environment';
-import { startMqttClient } from './mqtt-client';
-import { startMqttBroker } from './mqtt-broker';
+import { loadEnv } from './environment.js';
+import { startMqttClient } from './mqtt-client.js';
+import { startMqttBroker } from './mqtt-broker.js';
 import log from 'loglevel';
-import { updateEnergy, getData, updateOnline } from './persistence';
+import { updateEnergy, getData, updateOnline } from './persistence.js';
 import * as http from 'http';
 
 log.setLevel('info');
@@ -27,4 +27,5 @@ const httpServer = http.createServer((req, res) => {
     res.end();
 });
 
-httpServer.listen(env.HTTP_PORT, () => console.log(`HTTP server is running on port ${env.HTTP_PORT}...`));
+const port = +(env.HTTP_PORT || 80);
+httpServer.listen(port, () => console.log(`HTTP server is running on port ${port}...`));

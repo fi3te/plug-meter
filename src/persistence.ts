@@ -1,4 +1,5 @@
-import { JSONFile, Low } from 'lowdb';
+import { Low } from 'lowdb';
+import { JSONFile } from 'lowdb/node';
 
 type Data = {
     online: boolean;
@@ -7,15 +8,13 @@ type Data = {
 }
 
 const adapter = new JSONFile<Data>('db.json');
-const db = new Low(adapter);
-
-await db.read();
-
-db.data ||= {
+const db = new Low(adapter, {
     online: false,
     currentEnergy: 0,
     totalEnergy: 0
-};
+});
+
+await db.read();
 
 export async function updateEnergy(energy: number) {
     if (db.data) {
