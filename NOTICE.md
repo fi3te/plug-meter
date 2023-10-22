@@ -2,55 +2,55 @@
 
 ## Dependencies
 
-- https://github.com/moscajs/aedes
-  Copyright (c) Aedes Contributors
-  Copyright (c) 2015-2020 Matteo Collina, http://matteocollina.com
+- https://github.com/moscajs/aedes  
+  Copyright (c) Aedes Contributors  
+  Copyright (c) 2015-2020 Matteo Collina, http://matteocollina.com  
   Licensed under the MIT License (copy below)
 
-- https://github.com/motdotla/dotenv
-  Copyright (c) 2015 Scott Motte
+- https://github.com/motdotla/dotenv  
+  Copyright (c) 2015 Scott Motte  
   Licensed under the BSD-2-Clause License (copy below)
 
-- https://github.com/pimterry/loglevel
-  Copyright (c) 2013 Tim Perry
+- https://github.com/pimterry/loglevel  
+  Copyright (c) 2013 Tim Perry  
   Licensed under the MIT License (copy below)
 
-- https://github.com/typicode/lowdb
-  Copyright (c) 2021 typicode
+- https://github.com/typicode/lowdb  
+  Copyright (c) 2021 typicode  
   Licensed under the MIT License (copy below)
 
-- https://github.com/mqttjs/MQTT.js
-  Copyright (c) 2015-2016 MQTT.js contributors
-  MQTT.js contributors listed at https://github.com/mqttjs/MQTT.js#contributors
-  Copyright (c) 2011-2014 Adam Rudd
+- https://github.com/mqttjs/MQTT.js  
+  Copyright (c) 2015-2016 MQTT.js contributors  
+  MQTT.js contributors listed at https://github.com/mqttjs/MQTT.js#contributors  
+  Copyright (c) 2011-2014 Adam Rudd  
   Licensed under the MIT License (copy below)
 
 ## Dev Dependencies
 
-- https://github.com/DefinitelyTyped/DefinitelyTyped
+- https://github.com/DefinitelyTyped/DefinitelyTyped  
   Licensed under the MIT License (copy below)
 
-- https://github.com/typescript-eslint/typescript-eslint
-  Copyright JS Foundation and other contributors, https://js.foundation
+- https://github.com/typescript-eslint/typescript-eslint  
+  Copyright JS Foundation and other contributors, https://js.foundation  
   Licensed under the MIT License (copy below)
 
-- https://github.com/typescript-eslint/typescript-eslint
-  Copyright JS Foundation and other contributors, https://js.foundation
+- https://github.com/typescript-eslint/typescript-eslint  
+  Copyright JS Foundation and other contributors, https://js.foundation  
   Licensed under the MIT License (copy below)
 
-- https://github.com/eslint/eslint
-  Copyright OpenJS Foundation and other contributors, <www.openjsf.org>
+- https://github.com/eslint/eslint  
+  Copyright OpenJS Foundation and other contributors, <www.openjsf.org>  
   Licensed under the MIT License (copy below)
 
-- https://github.com/remy/nodemon
-  Copyright (c) 2010 - present, Remy Sharp, https://remysharp.com <remy@remysharp.com>
+- https://github.com/remy/nodemon  
+  Copyright (c) 2010 - present, Remy Sharp, https://remysharp.com <remy@remysharp.com>  
   Licensed under the MIT License (copy below)
 
-- https://github.com/TypeStrong/ts-node
-  Copyright (c) 2014 Blake Embrey (hello@blakeembrey.com)
+- https://github.com/TypeStrong/ts-node  
+  Copyright (c) 2014 Blake Embrey (hello@blakeembrey.com)  
   Licensed under the MIT License (copy below)
 
-- https://github.com/Microsoft/TypeScript
+- https://github.com/Microsoft/TypeScript  
   Licensed under the Apache License, Version 2.0 (copy below)
 
 ## MIT License
